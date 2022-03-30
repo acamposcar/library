@@ -8,59 +8,58 @@
     <title>Library</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="app.js" defer></script>
+    <script type="module" src="app.js" defer></script>
 </head>
 
 <body>
     <nav class="navbar">
 
         <div class="logo">
-            Library
+            <span class="material-icons-outlined">
+                book
+            </span>
+            The Library
         </div>
 
-        <button class="new-book">
+        <button id='new-book' class="btn primary ">
             <span class="material-icons">add</span>New book
         </button>
 
     </nav>
 
+
+    <form id='new-popup' class="popup">
+        <input id="form-title" name='title' required type="text" placeholder="Title">
+        <input id="form-author" name='author' required type="text" placeholder="Author">
+        <input id="form-pageNum" name='pageNum' required type="number" min="0" placeholder="Pages">
+        <input id="form-coverURL" name='coverULR' required type="url" placeholder="Cover URL">
+        <div class="form-buttons">
+            <button class="btn light cancel">Cancel</button>
+            <input class="btn primary" type="submit" value="Add book">
+        </div>
+    </form>
+
+
+    <form id='delete-popup' class=" ">
+        <h5 class="">Do you want to delete the post?</h5>
+        <p class="">This action cannot be reversed</p>
+        <div class="form-buttons">
+            <button class="btn light cancel">Cancel</button>
+            <input class="btn danger" type="submit" value="Delete book">
+        </div>
+    </form>
+
     <div class="container">
-        <div class="library">
-            <div class="book">
-                <div class="cover">
-                    <span class="material-icons">
-                        menu_book
-                    </span>
-                </div>
-                <div class="info">
-                    <div class="title">
-                        The Hobbit
-                    </div>
-                    <div class="author">JK Rowling</div>
-                    <div class="page-num">297</div>
-                    <button class="delete">Delete</button>
-                </div>
-            </div>
-            <div class="book">
-                <div class="cover">
-                    <span class="material-icons">
-                        menu_book
-                    </span>
-                </div>
-                <div class="info">
-                    <div class="title">
-                        The Hobbit
-                    </div>
-                    <div class="author">JK Rowling</div>
-                    <div class="page-num">297</div>
-                    <button class="delete">Delete</button>
-                </div>
-            </div>
+        <div id="library">
+            <h1>The library is empty</h1>
         </div>
     </div>
 </body>
