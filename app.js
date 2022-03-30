@@ -60,7 +60,7 @@ function addBookToDOM(book){
     library.appendChild(container);
     document.querySelector(`[data-id='${book.id}']`).addEventListener('click', () => {
         deleteBook(book);
-        updateAllBooks();
+        removeFadeOut(container, 500);
     })
 }
 
@@ -115,8 +115,6 @@ document.querySelector('.cancel').addEventListener('click', () => {
     clearHidePopups();
 })
 
-myLibrary.push(new Book('The Hobbit', 'J. R. R. Tolkien', 
-    '310', 'https://i.pinimg.com/originals/57/d4/46/57d4469d871b3d6a12cd6a8098258639.jpg'));
 myLibrary.push(new Book('Tokio Blues', 'Haruki Murakami', 
     '384', 'https://images-na.ssl-images-amazon.com/images/I/71NAbQBF82L.jpg'));
 myLibrary.push(new Book('1984', 'George Orwell', 
